@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechFix - Manutenção e Suporte em Informática</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <style>
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background: url('pexels-anthony-gideon-470707-7727496.jpg') no-repeat center center fixed;
+    background-size: cover;
+    line-height: 1.6;
+
+    /* animação do fundo */
+    opacity: 0;
+    animation: fadeInBackground 2s forwards;
+  }
+
+  @keyframes fadeInBackground {
+    to {
+      opacity: 1;
+    }
+  }
+
+  .content {
+    flex: 1;
+  }
+
+  header {
+    background: linear-gradient(135deg, black, #1e6fa7);
+    padding: 20px;
+    text-align: center;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .footer-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  .footer-links a:hover {
+    color: #cce7ff;
+  }
+
+  .intro {
+    text-align: center;
+    padding: 40px 20px 20px;
+  }
+
+  .intro h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: white;
+  }
+
+  .intro p {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: white;
+  }
+
+  .services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .service-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgb(10, 10, 10);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    /* animação dos cards */
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s forwards;
+  }
+
+  /* adicionar atraso em cada card para aparecerem em sequência */
+  .service-card:nth-child(1) { animation-delay: 0.5s; }
+  .service-card:nth-child(2) { animation-delay: 0.8s; }
+  .service-card:nth-child(3) { animation-delay: 1.1s; }
+  .service-card:nth-child(4) { animation-delay: 1.4s; }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.3);
+  }
+
+  .service-card h2 {
+    margin-top: 0;
+    font-size: 1.4em;
+    color: #0a3d62;
+    white-space: nowrap; /* evita quebra de linha */
+  }
+
+  .service-card p {
+    font-size: 0.95em;
+    color: #555;
+  }
+
+  .btn {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 10px 20px;
+    color: white;
+    background: #1e6fa7;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s ease;
+  }
+
+  .btn:hover {
+    background: #0a3d62;
+  }
+
+  footer {
+    background: linear-gradient(135deg, black, #1e6fa7);
+    color: #ccc;
+    padding: 40px 20px 10px;
+    font-size: 0.95em;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-brand h3 {
+    margin: 0;
+    color: #fff;
+    font-size: 1.4em;
+  }
+
+  .footer-brand p {
+    margin: 8px 0 0;
+    font-size: 0.9em;
+    color: #ddd;
+  }
+
+  .footer-social a i {
+    font-size: 24px;      /* tamanho do ícone */
+    color: white;         /* deixa os ícones brancos */
+    margin: 0 6px;
+    transition: opacity 0.3s;
+  }
+
+  .footer-social a i:hover {
+    opacity: 0.7;        /* leve efeito no hover */
+  }
+
+  .footer-bottom {
+    margin-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 10px;
+    color: #eee;
+    font-size: 0.85em;
+  }
+
+  </style>
+</head>
+<body>
+  <div class="content">
+    <header>
+      <div class="footer-links">
+        <a href="#">Início</a>
+        <a href="#">Serviços</a>
+        <a href="#">Contato</a>
+        <a href="#">Sobre</a>
+      </div>
+    </header>
+
+    <div class="intro">
+      <h1>TechFix</h1>
+      <p>Manutenção, Backup e Formatação de PCs e Notebooks com Qualidade Profissional</p>
+    </div>
+
+    <section class="services">
+      <div class="service-card">
+        <h2>Manutenção e Limpeza</h2>
+        <p>Limpeza interna, troca de pasta térmica e ajustes para máxima performance do seu equipamento.</p>
+        <a href="https://wa.me/5511965672068?text=ol%C3%A1%20gostaria%20de%20um%20or%C3%A7amento" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="btn">Contato</a>
+      </div>
+      <div class="service-card">
+        <h2>Formatação Completa</h2>
+        <p>Instalação do sistema, drivers e programas essenciais. Seu computador como novo, rápido e otimizado.</p>
+        <a href="https://wa.me/5511965672068?text=ol%C3%A1%20gostaria%20de%20um%20or%C3%A7amento" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="btn">Contato</a>
+      </div>
+      <div class="service-card">
+        <h2>Backup de Dados</h2>
+        <p>Salvamos seus arquivos importantes antes de formatações ou trocas de disco. Segurança total para seus dados.</p>
+        <a href="https://wa.me/5511965672068?text=ol%C3%A1%20gostaria%20de%20um%20or%C3%A7amento" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="btn">Contato</a>
+      </div>
+      <div class="service-card">
+        <h2>Suporte Técnico</h2>
+        <p>Atendimento remoto rápido para problemas de software, hardware, redes e consultoria especializada.</p>
+        <a href="https://wa.me/5511965672068?text=ol%C3%A1%20gostaria%20de%20um%20or%C3%A7amento" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="btn">Contato</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>TechFix</h3>
+        <p>Manutenção e Suporte de Qualidade</p>
+      </div>
+      <div class="footer-social">
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/seuPerfilOuPagina" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <i class="bi bi-facebook"></i>
+        </a>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/seuPerfil" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <i class="bi bi-instagram"></i>
+        </a>
+        <!-- WhatsApp -->
+        <a href="https://wa.me/5511965672068?text=ol%C3%A1%20gostaria%20de%20um%20or%C3%A7amento" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <i class="bi bi-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 TechFix - Todos os direitos reservados.
+    </div>
+  </footer>
+</body>
+</html>
